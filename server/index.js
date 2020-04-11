@@ -8,7 +8,7 @@ keypressHandler.initialize(message => {
 });
 
 const httpHandler = require('./js/httpHandler');
-
+httpHandler.initialize(messageQ);
 
 const http = require('http');
 const server = http.createServer(httpHandler.router);

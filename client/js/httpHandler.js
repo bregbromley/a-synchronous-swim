@@ -7,16 +7,17 @@
   const getSwimCommands = () => {
     $.ajax({
       type: 'GET',
-      data: data,
       url: serverUrl,
       success: (data) => {
         SwimTeam.move(data)
       },
-      error: (error) => {
-        console.log(error)
+      complete: () => {
+        setTimeout(getSwimCommands, 1000)
       }
     });
   }
+
+  // setTimeout(getSwimCommands, 0);
   //
 
   /////////////////////////////////////////////////////////////////////
